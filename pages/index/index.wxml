@@ -1,0 +1,68 @@
+<!-- 首页 -->
+
+<block wx:if="{{wd && wd.status=='ok'}}"> 
+
+<!--外层的滚动容器  -->
+<!--wxml文件用boolean，需要用{{}}  -->
+<scroll-view scroll-y class='outer'>
+<!--基本信息，城市 日期等等  --> 
+<view class="base_info inner">
+  <text class='city'>{{wd.city}}</text>
+  <text class='date'>{{wd.date}}</text>
+  <text class='update_time'>{{wd.upTime}} 更新</text>
+</view>
+
+<!--天气情况的描述  -->
+<view class='temp_info inner'>
+  <text class='temp'>{{wd.temp}}℃</text>
+  <text class='desc'>{{wd.desc}}</text>
+</view>
+
+<!--各种气象指数  -->
+<view class='index_info inner'>
+  <text class='index_title'>空气质量：{{wd.suggestion.air.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.air.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>舒适指数：{{wd.suggestion.comf.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.comf.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>洗车指数：{{wd.suggestion.cw.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.cw.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>穿衣指数：{{wd.suggestion.drsg.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.drsg.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>感冒指数：{{wd.suggestion.flu.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.flu.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>运动指数：{{wd.suggestion.sport.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.sport.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>旅游指数：{{wd.suggestion.trav.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.trav.txt}}</text>
+</view>
+
+<view class='index_info inner'>
+  <text class='index_title'>紫外线指数：{{wd.suggestion.uv.brf}}</text>
+  <text class='index_desc'>{{wd.suggestion.uv.txt}}</text>
+</view>
+
+</scroll-view>
+
+</block>
+
+<block wx:else>
+  <text>加载城市信息错误</text>
+</block>
