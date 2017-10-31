@@ -1,0 +1,2 @@
+<!--include将那份页面代码全部复制过来-->
+<include src="/pages/index/index.wxml" />
